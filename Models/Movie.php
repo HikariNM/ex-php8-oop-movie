@@ -20,6 +20,12 @@ use Rating;
     }
 
     public function getSummary() {
-        return "The movie '{$this->title}' was directed by {$this->director} in {$this->releaseYear}. This movie is {$this->genres[0]->ageRating}. It's rating is {$this->getVoteText()}";
+        return "The movie '{$this->title}' was directed by {$this->director} in {$this->releaseYear}. This movie is {$this->genres[0]->ageRating}. It's rating is {$this->getStars()}";
+    }
+
+    public function getGenresList() {
+        $names = [];
+        foreach ($this->genres as $g) { $names[] = $g->name; }
+        return implode(", ", $names);
     }
 }
