@@ -4,13 +4,6 @@ require_once 'Models/Genre.php';
 require_once 'Models/Movie.php';
 require_once 'db.php';
 
-
-
-// var_dump($movie1);
-echo $movie1->getSummary() . "<br>";
-// var_dump($movie2);
-echo $movie2->getSummary();
-
 ?>
 
 
@@ -22,6 +15,12 @@ echo $movie2->getSummary();
     <title>ex-php8-oop-movie</title>
 </head>
 <body>
+    <?php 
     
+    foreach ($movies as $movie){
+        echo $movie->getSummary() . "<br>";
+    }
+    
+    ?>
 </body>
 </html>
