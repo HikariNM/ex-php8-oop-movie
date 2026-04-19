@@ -1,43 +1,14 @@
 <?php 
 
-class Genre {
-public $name;
-public $ageRating;
+require_once 'Models/Genre.php';
+require_once 'Models/Movie.php';
+require_once 'db.php';
 
-public function __construct($_name, $_ageRating){
-    $this->name = $_name;
-    $this->ageRating = $_ageRating;
-}
 
-}
 
-class Movie {
-    public $title;
-    public $director;
-    public $year;
-    public $genre;
-
-    public function __construct($_title, $_director, $_year, $_genre){
-    $this->title =  $_title;
-    $this->director =  $_director;
-    $this->year =  $_year;
-    $this->genre =  $_genre;
-    }
-
-    public function getSummary() {
-        return "The movie '{$this->title}' was directed by {$this->director} in {$this->year}. This movie is {$this->genre->ageRating}.";
-    }
-}
-
-$actionGenre = new Genre("Action", "PG-13");
-$horrorGenre = new Genre("Horror", "R (18+)");
-
-$movie1 = new Movie("Mad Max: Fury Road", "George Miller", "2015", $actionGenre);
-$movie2 = new Movie("The Conjuring", "James Wan", "2013", $horrorGenre);
-
-var_dump($movie1);
-echo $movie1->getSummary();
-var_dump($movie2);
+// var_dump($movie1);
+echo $movie1->getSummary() . "<br>";
+// var_dump($movie2);
 echo $movie2->getSummary();
 
 ?>
